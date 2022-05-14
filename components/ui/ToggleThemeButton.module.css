@@ -1,0 +1,14 @@
+/* translate-x-[26px] 
+-translate-y-[50%] */
+
+.animationLight {
+transform: translate(26px, -50%);
+}
+
+.animationDark {
+transform: translate(-0px, -50%);
+}
+/*
+hover:-translate-y-2/4 
+hover:-translate-x-[0px] */
+

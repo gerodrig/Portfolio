@@ -1,0 +1,27 @@
+.fillColorIn {
+    background: linear-gradient(
+        to right,
+        #60a5fa 50%,
+        white 50%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    animation: makeItfadeIn 2s forwards;
+}
+
+.fillColorInDark {
+    background: linear-gradient(
+        to right,
+        #c1c5cd 50%,
+        white 50%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    animation: makeItfadeIn 2s forwards;
+}
+
+@keyframes makeItfadeIn {
+    100% {
+        background-position: left;
+    }
+}

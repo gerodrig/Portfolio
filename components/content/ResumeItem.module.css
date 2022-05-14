@@ -1,0 +1,19 @@
+.bulletPoint {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    border-radius: 50%;
+    margin-left: -26px;
+    margin-top: 2px;
+}
+/* 
+.bulletPoint:before {
+    content: ' ';
+    width: 1rem;
+    height: 1rem;
+    line-height: 0.5;
+    position: absolute;
+    left: -0.6rem;
+    top: 0.3rem;
+    border-radius: 50%;
+} */
