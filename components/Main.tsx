@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Navbar } from './Navbar';
+import { Navbar } from './ui/Navbar/Navbar';
 
 interface MainProps {
     children: JSX.Element | JSX.Element[];

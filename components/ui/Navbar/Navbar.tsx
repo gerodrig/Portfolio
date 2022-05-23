@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { NavItem } from './NavItem';
 import { ActiveNavbarItem } from './ActiveNavbarItem';
 
-import { sections } from '../../data/sections';
+import { sections } from '../../../data/sections';
 
 export const Navbar = () => {
     const { pathname } = useRouter();

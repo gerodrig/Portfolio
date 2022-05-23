@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Iskill } from '../../interfaces';
+import { Iskill } from '../../../interfaces';
 
 import style from './SkillCard.module.css';
 

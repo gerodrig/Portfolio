@@ -9,8 +9,8 @@ import { MdEmail } from 'react-icons/md';
 import { GoLocation } from 'react-icons/go';
 import { AiOutlineMail } from 'react-icons/ai';
 
-import ToggleThemeButton from './ToggleThemeButton';
-import Typewriter from '../animations/Typewriter';
+import ToggleThemeButton from './ui/ToggleThemeButton/ToggleThemeButton';
+import Typewriter from './animations/Typewriter';
 
 
 export const Sidebar = () => {

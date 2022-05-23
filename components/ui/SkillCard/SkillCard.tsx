@@ -1,9 +1,9 @@
 import { FC } from 'react';
 //import { useMediaQuery, Context as ResponsiveContext } from 'react-responsive';
 import { motion } from 'framer-motion';
-import { fadeInUp } from '../../animations';
+import { fadeInUp } from '../../../animations';
 
-import { Iskill, Iskills } from '../../interfaces';
+import { Iskill, Iskills } from '../../../interfaces';
 import { SkillItem } from './SkillItem';
 
 import style from './SkillCard.module.css';
