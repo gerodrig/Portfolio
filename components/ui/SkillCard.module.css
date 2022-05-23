@@ -5,6 +5,13 @@
     perspective: 1000px;
 }
 
+@media (max-width: 390px) {
+    .flip-card {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 .flip-card-inner {
     position: absolute;
     width: 100%;
@@ -18,6 +25,13 @@
 .flip-card-back-content {
     height: 20px;
     width: 180px;
+}
+
+@media (max-width: 390px) {
+    .flip-card-back-content {
+        height: 17px;
+        width: 140px;
+    }
 }
 
 .flip-card:hover .flip-card-inner {

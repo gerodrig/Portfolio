@@ -15,12 +15,13 @@ import {
     SiHandlebarsdotjs,
     SiIonic,
     SiAngular,
-    SiIos,
+    SiApple,
     SiAndroid,
 } from 'react-icons/si';
 
 export const projects: IProject[] = [
     {
+        id: 1,
         name: 'TesClone Shop',
         description:
             'This app is a functional online shop that includes NextAuth and Paypal integration.',
@@ -32,6 +33,7 @@ export const projects: IProject[] = [
         technologyIcon: [SiNextdotjs, SiReact, SiTypescript, SiPaypal],
     },
     {
+        id: 2,
         name: 'Pokemon Favorites',
         description:
             'Next application that fetches data from the Poke API that implements Static Site Generation, Incrementat Static Regeneration, SEO friendly and Open Graph Meta Tags.',
@@ -43,6 +45,7 @@ export const projects: IProject[] = [
         technologyIcon: [SiNextdotjs, SiReact, SiTypescript, SiVercel],
     },
     {
+        id: 3,
         name: 'React Maps App',
         description:
             'React Application that implements Mapbox API and helps locate the user location and create pins on the map.',
@@ -51,9 +54,10 @@ export const projects: IProject[] = [
         githubLink: 'https://github.com/gerodrig/ReactMap-App',
         category: ['react', 'mongo', 'nextjs'],
         technology: ['React', 'TypeScript', 'Vercel', 'Mapbox'],
-        technologyIcon: [SiMapbox, SiReact, SiTypescript, SiVercel],
+        technologyIcon: [SiReact, SiTypescript, SiVercel, SiMapbox],
     },
     {
+        id: 4,
         name: 'MERN Calendar App',
         description:
             'This calendar is a MERN project where the code was split in 2. Backend was done in Node and front end was done in React you can check the code for both in the following links.',
@@ -65,17 +69,19 @@ export const projects: IProject[] = [
         technologyIcon: [SiMongodb, SiExpress, SiReact, SiNodedotjs, SiJavascript],
     },
     {
+        id: 5,
         name: 'Chat App',
         description:
-            'This chat application was implemented with SocketIO and Auth implementation. This will show all users connected and will allow communication between all users. All chats are stored in mongoDB.',
+            'This chat application is implemented with SocketIO and Auth implementation. It allows communication between all users. All chats are stored in mongoDB.',
         imagePath: '/assets/ChatApp.png',
         deployedLink: 'https://github.com/gerodrig/chatApp-sockets-backend',
         githubLink: 'https://chatapp-socketsio.herokuapp.com',
-        category: ['mongo', 'express', 'react', 'node', 'typescript', 'socketio'],
-        technology: ['Mongo', 'Express', 'React', 'Node', 'Typescript', 'SocketIO'],
-        technologyIcon: [SiMongodb, SiExpress, SiReact, SiNodedotjs, SiTypescript, SiSocketdotio],
+        category: ['mongo', 'react', 'node', 'typescript', 'socketio'],
+        technology: ['Mongo', 'React', 'Node', 'Typescript', 'SocketIO'],
+        technologyIcon: [SiMongodb, SiReact, SiNodedotjs, SiTypescript, SiSocketdotio],
     },
     {
+        id: 6,
         name: 'MiChant Booking App',
         description:
             'Booking App that allows users to book a place. This app was with Node, Express, MongoDB and Handlebars.',
@@ -87,6 +93,7 @@ export const projects: IProject[] = [
         technologyIcon: [SiMongodb, SiExpress, SiNodedotjs, SiJavascript, SiHandlebarsdotjs],
     },
     {
+        id: 7,
         name: 'Ionic Pizza App',
         description:
             'Order App in Ionic that allows users to order a pizza. This app was built with Ionic, Angular for Android and iOS.',
@@ -95,9 +102,10 @@ export const projects: IProject[] = [
         githubLink: 'https://gerodrig.github.io/ionic-pizza-app/home',
         category: ['ionic', 'angular'],
         technology: ['Ionic', 'Angular', 'iOS', 'Android'],
-        technologyIcon: [SiIonic, SiAngular, SiIos, SiAndroid],
+        technologyIcon: [SiIonic, SiAngular, SiApple, SiAndroid],
     },
     {
+        id: 8,
         name: 'Ionic Movies App',
         description:
             'Ionic iOS and Android application that display current movies. Application consumes TMDB Api.',
@@ -106,9 +114,10 @@ export const projects: IProject[] = [
         githubLink: 'https://github.com/gerodrig/Ionic-Movies-app',
         category: ['ionic', 'angular'],
         technology: ['Ionic', 'Angular', 'iOS', 'Android'],
-        technologyIcon: [SiIonic, SiAngular, SiIos, SiAndroid],
+        technologyIcon: [SiIonic, SiAngular, SiApple, SiAndroid],
     },
     {
+        id: 9,
         name: 'Countries App',
         description:
             'This is a SPA in Angular that consumes https://restcountries.com/ API to check all countries information.',

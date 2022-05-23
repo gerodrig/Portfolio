@@ -1,7 +1,10 @@
+import { motion } from 'framer-motion';
+import { fadeInDown, stagger } from '../../animations';
+
 export const About = () => {
     return (
-        <article className="px-6 mt-6 text-justify indent-6 dark:text-dark-primary">
-            <p>
+        <motion.article className="px-6 mt-6 text-justify indent-6 dark:text-dark-primary" variants={stagger} initial='initial' animate="animate">
+            <motion.p variants={fadeInDown}>
                 I am a{' '}
                 <span className="font-bold text-blue-600">
                     Software Developer
@@ -16,8 +19,8 @@ export const About = () => {
                 Scala, scripting in python, and testing with unit and
                 integration testing. I am a globally-minded individual that
                 loves to learn new things every day.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p variants={fadeInDown}>
                 {' '}
                 <span className="font-bold text-yellow-600">
                     Solving problems
@@ -27,11 +30,11 @@ export const About = () => {
                 and focused on service culture to excel customers expectations.
                 I like to define myself as a: hardworking, focused,
                 team-oriented, organized, flexible, and multi-task person.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p variants={fadeInDown}>
                 I am looking for a position in software development in any
                 region of Canada to grow with your company.
-            </p>
-        </article>
+            </motion.p>
+        </motion.article>
     );
 };

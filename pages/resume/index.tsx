@@ -1,5 +1,6 @@
-import { NextPage } from 'next';
 import Head from 'next/head';
+import { NextPage } from 'next';
+
 import { Resume } from '../../components/content';
 import { Layout } from '../../components/layouts/Layout';
 

@@ -35,6 +35,7 @@ export interface IEmployment extends IEducation {
 }
 
 export interface IProject {
+    id: number;
     name: string;
     description: string;
     imagePath: string;

@@ -1,10 +1,12 @@
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';
 
 import style from './ToggleThemeButton.module.css';
 
-const ToggleThemeButton = () => {
+
+
+const ToggleThemeButton: FC<{className?: string}> = ({className}) => {
     const { theme, setTheme } = useTheme();
     const [currentTheme, setCurrentTheme] = useState(style.animationLight);
 
@@ -22,7 +24,7 @@ const ToggleThemeButton = () => {
     }, [theme]);
 
     return (
-        <div className="flex justify-center" >
+        <div className={`flex justify-center ${className}`} >
             <label
                 htmlFor="checkbox"
                 className="block h-8 border-2 border-solid w-14 toggler dark:border-dark-primary border-blue-primary rounded-[30px] relative cursor-pointer" >

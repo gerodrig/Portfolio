@@ -1,5 +1,6 @@
-import Head from 'next/head';
 import { FC } from 'react';
+import Head from 'next/head';
+
 import { Sidebar, Main } from '../ui';
 
 interface LayoutProps {

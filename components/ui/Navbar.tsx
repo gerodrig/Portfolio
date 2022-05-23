@@ -1,8 +1,11 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
+
 import { NavItem } from './NavItem';
-import { sections } from '../../data/sections';
 import { ActiveNavbarItem } from './ActiveNavbarItem';
+
+import { sections } from '../../data/sections';
 
 export const Navbar = () => {
     const { pathname } = useRouter();

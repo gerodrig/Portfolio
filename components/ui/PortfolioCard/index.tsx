@@ -1,19 +1,19 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import cx from 'classnames';
+
+import { motion } from 'framer-motion';
 
 import Card from './Card';
 import CardOverlay from './CardOverlay';
-
+import CardModal from './CardModal';
 import CardContent, { CardContentProps } from './CardContent';
 
+import { fadeInUp } from '../../../animations';
+
 import styles from './styles.module.css';
-import { MdClose } from 'react-icons/md';
-import { SiGithub } from 'react-icons/si';
-import Image from 'next/image';
-import { IoMdRocket } from 'react-icons/io';
-import CardModal from './CardModal';
 
 type TaggedContentCardProps = {
+    id: number;
     className?: string;
     deployedLink: string;
     githubLink: string;
@@ -24,9 +24,12 @@ type TaggedContentCardProps = {
     tags: CardContentProps['tags'];
     icons: CardContentProps['icons'];
     isActive?: boolean;
+    showDetail?: number | null;
+    setShowDetail?: (id: number | null) => void;
 };
 
 const PortfolioCard: FC<TaggedContentCardProps> = ({
+    id,
     className,
     githubLink,
     deployedLink,
@@ -37,13 +40,18 @@ const PortfolioCard: FC<TaggedContentCardProps> = ({
     icons,
     technologies,
     isActive = false,
+    showDetail = null,
+    setShowDetail = () => {},
     ...rest
 }) => {
-    const [showDetail, setShowDetail] = useState(false);
+    
+
 
     return (
         <>
+
             <CardModal
+                id={id}
                 description={description}
                 thumbnail={thumbnail}
                 technologies={technologies}
@@ -55,7 +63,9 @@ const PortfolioCard: FC<TaggedContentCardProps> = ({
                 title={title}
             />
 
-            <div className={className} onClick={() => setShowDetail(true)}>
+            <motion.div className={className} onClick={() => setShowDetail(id)}
+            variants={fadeInUp}
+            >
                 <div className={styles['card-link']}>
                     <Card
                         className={cx(styles['tagged-content-card'])}
@@ -71,7 +81,7 @@ const PortfolioCard: FC<TaggedContentCardProps> = ({
                         />
                     </Card>
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 };

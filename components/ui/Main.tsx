@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { FC } from 'react';
 import { Navbar } from './Navbar';
 
@@ -9,10 +8,15 @@ interface MainProps {
 export const Main: FC<MainProps> = ({ children }) => {
 
     return (
-        <main className="col-span-12 duration-300 ease-in bg-white shadow-2xl lg:col-span-8 md:col-span-12 rounded-2xl">
+        <main className="h-auto col-span-12 duration-300 ease-in bg-white shadow-2xl lg:col-span-8 md:col-span-12 rounded-2xl">
             <Navbar />
             <hr></hr>
-            <div>{children}</div>
+            <div className='lg:mb-10'>
+                {children}
+                <hr></hr>
+                
+            </div>
+        
         </main>
     );
 };

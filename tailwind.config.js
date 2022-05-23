@@ -7,6 +7,7 @@ module.exports = {
     theme: {
         fontFamily: {
             Marck: ['Marck Script', 'cursive'],
+            montserrat: ['Montserrat', 'sans-serif'],
         },
         extend: {
             colors: {

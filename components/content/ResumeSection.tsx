@@ -1,7 +1,11 @@
-import { useTheme } from 'next-themes';
 import { FC, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+
+import { motion } from 'framer-motion';
+
 import { IEducation, IEmployment } from '../../interfaces';
 import { ResumeItem } from './ResumeItem';
+import { stagger } from '../../animations';
 
 type IResumeSectionProps = {
     data: IEducation[] | IEmployment[];
@@ -18,22 +22,23 @@ export const ResumeSection: FC<IResumeSectionProps> = ({
     color = 'black',
     isActive = true,
 }: IResumeSectionProps) => {
-    
     const { theme } = useTheme();
-    const [ themeColor, setThemeColor ] = useState('');
+    const [themeColor, setThemeColor] = useState('black');
 
     useEffect(() => {
-        if( theme !== 'dark' ) {
+        if (theme !== 'dark') {
             setThemeColor(color);
         } else {
             setThemeColor('black');
         }
-    }, [color,theme])
-    
+    }, [color, theme]);
+
     return (
-        <>
+        <div >
             <h3
-                className={`p-2 text-2xl font-bold text-white`} style={{backgroundColor: themeColor}}>
+                className={`p-2 text-2xl font-bold text-white`}
+                style={{ backgroundColor: themeColor }}
+                >
                 {title}
 
                 <span
@@ -44,14 +49,22 @@ export const ResumeSection: FC<IResumeSectionProps> = ({
                     onClick={() => toggler(title.toLowerCase())}></span>
             </h3>
             <div>
-                <ul
-                    className={`py-5 border-l-4 transition-transform ease-in delay-500 ${isActive ? '' : ' hidden'}`} style={{borderColor: themeColor}}>
+                <motion.ul
+                    className={`py-5 border-l-4 ${
+                        isActive ? '' : ' hidden'
+                    }`}
+                    style={{ borderColor: themeColor }} 
+                    variants={stagger} animate="animate" initial="initial" exit="exit" 
+                    >
                     {data.map((item: IEducation | IEmployment) => (
-                        <ResumeItem key={item.title + item.name} data={item} color={themeColor} /> 
+                        <ResumeItem
+                            key={item.title + item.name}
+                            data={item}
+                            color={themeColor}
+                        />
                     ))}
-                    
-                </ul>
+                </motion.ul>
             </div>
-        </>
+        </div>
     );
 };

@@ -28,6 +28,10 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap"
                         rel="stylesheet"
                     />
+                    <link
+                        href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap"
+                        rel="stylesheet"
+                    />
                 </Head>
                 <body className='duration-300 ease-in-out bg-gradient-to-r dark:from-black dark:via-gray-500 dark:to-gray-300 from-blue-600 via-blue-400 to-blue-200'>
                     <Main />

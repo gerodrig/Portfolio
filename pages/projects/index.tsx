@@ -1,12 +1,18 @@
+import { useState, useEffect } from 'react';
 import { NextPage } from 'next';
 import { useTheme } from 'next-themes';
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
 import { Layout } from '../../components/layouts/Layout';
+
+import { motion } from 'framer-motion';
+import { routeAnimation, stagger } from '../../animations';
+
 import { PortfolioCard } from '../../components/ui';
 import ProjectsNavbar from '../../components/ui/ProjectsNavbar';
+
 import { projects as projectsData } from '../../data/projects';
-import { Category, IProject } from '../../interfaces';
+import { Category } from '../../interfaces';
+
 import style from './index.module.css';
 
 const ProjectsPage: NextPage = () => {
@@ -16,6 +22,8 @@ const ProjectsPage: NextPage = () => {
     const [projects, setProjects] = useState(projectsData);
     const [activeItem, setActiveItem] = useState('all');
 
+    const [showDetail, setShowDetail] = useState<number | null>(null);
+
     const handlerFilterCategory = (category: Category | 'all') => {
         if (category === 'all') {
             setProjects(projectsData);
@@ -23,7 +31,7 @@ const ProjectsPage: NextPage = () => {
             return;
         }
 
-        //filter Ionic as moblie
+        //filter Ionic as mobile
         const checkCategory = category === 'mobile' ? 'ionic' : category;
 
         const filteredProjects = projectsData.filter((project) =>
@@ -52,17 +60,22 @@ const ProjectsPage: NextPage = () => {
             <Layout
                 title="Projects"
                 pageDescription="Gerardo Rodriguez Portfolio">
-                <div
-                    className={`px-5 py-2 overflow-y-scroll ${themeMode}`}
-                    style={{ height: '50vh' }}>
+                <motion.div
+                    className={`px-5 h-1/2 py-2 overflow-y-scroll overflow-hidden ${themeMode}`}
+                    style={{ height: '70vh' }} variants={routeAnimation} initial="initial" animate="animate" exit='exit'>
                     <ProjectsNavbar
                         handlerFilterCategory={handlerFilterCategory}
                         active={activeItem}
                     />
                     <hr />
-                    <div className="relative grid grid-cols-12 gap-4 p-2 my-3 bg-gray-400">
+                    <motion.div
+                        className="relative grid grid-cols-12 gap-4 p-2 my-3 bg-gray-400"
+                        variants={stagger}
+                        initial="initial"
+                        animate="animate">
                         {projects.map((project) => (
                             <PortfolioCard
+                                id={project.id}
                                 key={project.name}
                                 deployedLink={project.deployedLink}
                                 githubLink={project.githubLink}
@@ -72,12 +85,13 @@ const ProjectsPage: NextPage = () => {
                                 tags={project.category}
                                 icons={project.technologyIcon}
                                 technologies={project.technology}
-                                className="col-span-12 m-auto border-2 border-black border-solid md:m-0 lg:col-span-4 md:col-span-6"
-                                isActive={false}
+                                className="col-span-12 m-auto md:m-0 xl:col-span-4 md:col-span-6"
+                                showDetail={showDetail}
+                                setShowDetail={setShowDetail}
                             />
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </Layout>
         </>
     );
