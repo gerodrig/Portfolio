@@ -5,6 +5,7 @@
 
 ## Enviromental template
 ```
+RECIPIENT=
 MAILGUN_API=
 MAILGUN_DOMAIN=
 ```
