@@ -3,8 +3,8 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
 
-import { Category } from '../../interfaces';
-import { springRight, stagger } from '../../animations';
+import { Category } from '../../../interfaces';
+import { springRight, stagger } from '../../../animations';
 
 type NavItemProps = {
     value: Category | 'all';

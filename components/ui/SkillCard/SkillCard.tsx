@@ -40,4 +40,3 @@ export const SkillCard: FC<{ skill: Iskills }> = ({
     );
 };
 
-//bscriclefill

@@ -1,8 +1,9 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import {ThemeProvider} from 'next-themes';
 import { AnimatePresence } from 'framer-motion';
-import { Router } from 'next/router';
+
+import '../styles/globals.css';
+
 
 function MyApp({ Component, pageProps, router }: AppProps) {
     return (

@@ -2,15 +2,14 @@ import { useState, useEffect } from 'react';
 import { NextPage } from 'next';
 import { useTheme } from 'next-themes';
 import Head from 'next/head';
-import { Layout } from '../../components/layouts/Layout';
+import { Layout } from '../../components/layouts/';
 
 import { motion } from 'framer-motion';
 import { routeAnimation, stagger } from '../../animations';
 
-import { PortfolioCard } from '../../components/ui';
-import ProjectsNavbar from '../../components/ui/ProjectsNavbar';
+import { PortfolioCard, ProjectsNavbar} from '../../components/ui';
 
-import { projects as projectsData } from '../../data/projects';
+import { projects as projectsData } from '../../data/';
 import { Category } from '../../interfaces';
 
 import style from './index.module.css';
