@@ -15,6 +15,7 @@ export const ContactForm = () => {
 
     const { theme } = useTheme();
     const [themeMode, setThemeMode] = useState('#60a5fa');
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     useEffect(() => {
         if (theme !== 'dark') {
@@ -33,26 +34,39 @@ export const ContactForm = () => {
         },
         validate: validateForm,
         onSubmit: async (values, { resetForm }) => {
+            setButtonDisabled(true);
             try {
-                const response = await fetch('/api/contact', {
+                const response = await fetch('/api/send-email', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(values),
                 });
+                const data = await response.json();
 
-                if (response.status === 200) {
+                console.log(data);
+                if (data.success)  {
                     Swal.fire({
                         text: 'Your message has been sent successfully!',
                         icon: 'success',
                         confirmButtonText: 'OK',
                         confirmButtonColor: themeMode,
                     });
-
+                    setButtonDisabled(false);
+                    resetForm();
+                } else {
+                    Swal.fire({
+                        text: 'Something went wrong, please try again!',
+                        icon: 'error',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: themeMode,
+                    });
+                    setButtonDisabled(false);
                     resetForm();
                 }
             } catch (error) {
+                setButtonDisabled(false);
                 return Swal.fire({
                     text: 'Something went wrong!',
                     icon: 'error',
@@ -143,7 +157,7 @@ export const ContactForm = () => {
                         />
                         <button
                             className="col-span-12 py-1 text-white duration-300 ease-in bg-blue-400 rounded-full dark:bg-dark-secondary hover:animate-pulse hover:font-bold hover:scale-105"
-                            type="submit">
+                            type="submit" disabled={buttonDisabled}>
                             Send
                         </button>
                     </motion.form>
